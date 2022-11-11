@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductsService } from './products.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-products-app';
+  products: any;  
+
+  constructor(private productsService: ProductsService) {}
+
+  ngOnInit(): void {
+    this.getProductsList();
+  }
+
+  getProductsList(): void {
+    this.productsService.getProducts().subscribe((res) => {
+      console.log("products:::", res);
+      this.products = res.products;
+    })
+  }
 }

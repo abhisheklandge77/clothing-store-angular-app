@@ -1,0 +1,7 @@
+<div class="products-container">
+    <app-product-card *ngFor="let product of products | paginate: {
+        itemsPerPage: pageSize,
+        currentPage: page,
+        totalItems: totalCount}; let i = index" [product]="product"></app-product-card>
+    <app-pagination (handlePageChange)="setCurrentPage($event)" (handlePageSizeChange)="setPageSize($event)"></app-pagination>
+</div>

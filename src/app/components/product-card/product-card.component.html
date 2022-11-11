@@ -1,0 +1,12 @@
+<div class="product-card-container">
+    <div class="product-image">
+        <img [src]="product.images[0].url" [alt]="product.name" />
+    </div>
+    <div class="product-info">
+        <h4 class="product-title" [title]="product.name">{{product.name}}</h4>
+        <h3>Price: {{product.price.formattedValue}}</h3>
+    </div>
+    <div class="add-cart-btn-container">
+        <app-button buttonText="Add to Cart" (onBtnClick)="onAddToCartBtnClick(product)"></app-button>
+    </div>
+</div>

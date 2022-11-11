@@ -1,0 +1,14 @@
+<div class="pagination-container">
+    <pagination-controls
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="onPageCurrentChange($event)"
+    >
+    </pagination-controls>
+    <div>
+        <label for="page-sizes">Select Page Size: </label>
+        <select name="page-sizes" class="page-size-dropdown" (change)="onPageSizeChange($event)">
+            <option *ngFor="let size of pageSizes">{{size}}</option>
+        </select>
+    </div>
+</div>

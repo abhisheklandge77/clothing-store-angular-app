@@ -1,0 +1,12 @@
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f57b06;
+    padding: 1rem;
+}
+
+.navbar-container h2{
+    color: #fff;
+    margin: 0;
+}
