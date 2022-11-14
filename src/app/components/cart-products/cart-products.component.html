@@ -1,0 +1,15 @@
+<div class="cart-container">
+    <h3 class="back-to-home-link" routerLink="/">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Back to home</span>
+    </h3>
+    <div class="cart-main-panel">
+        <div class="cart-products-container">
+            <app-product-card *ngFor="let cartProduct of cartProducts" [product]="cartProduct">
+            </app-product-card>
+        </div>
+        <div class="billing-panel">
+            <app-billing-panel></app-billing-panel>
+        </div>
+    </div>
+</div>

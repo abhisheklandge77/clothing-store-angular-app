@@ -1,0 +1,25 @@
+<div class="billing-container">
+    <h2>Cart Items :</h2>
+    <table>
+        <thead class="billing-table-header">
+            <th>S.No.</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price ($)</th>
+        </thead>
+        <tbody class="billind-table-body">
+                <tr *ngFor="let product of cartProducts; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td>{{product.price.value}}</td>
+                </tr>
+        </tbody>
+    </table>
+    <h2>Total: ${{grandTotal}}</h2>
+
+    <div class="billing-btn-container">
+        <app-button buttonText="Checkout"
+            [customButtonStyle]="{'font-size':'20px', 'width': '80%', 'padding': '.8rem'}"></app-button>
+    </div>
+</div>

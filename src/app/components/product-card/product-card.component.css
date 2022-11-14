@@ -28,6 +28,18 @@
     white-space: nowrap;
 }
 
+.quantity-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto 1rem auto;
+}
+
+.quantity-section p{
+    margin: 0;
+}
+
 .add-cart-btn-container{
     display: flex;
     justify-content: center;

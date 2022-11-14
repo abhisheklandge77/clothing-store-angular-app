@@ -1,0 +1,25 @@
+.billing-container{
+    color: #20232a;
+}
+.billing-container table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.billing-table-header{
+    border-bottom: 2px solid #c9c6c3;
+}
+.billing-table-header th{
+    text-align: left;
+    padding: .5rem;
+}
+.billind-table-body tr{
+    border-bottom: 1px solid #c9c6c3;
+}
+.billind-table-body td{
+    padding: .5rem;
+}
+.billing-btn-container{
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0;
+}

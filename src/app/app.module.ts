@@ -11,6 +11,8 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { FooterComponent } from './components/footer/footer.component';
 import { ButtonComponent } from './components/button/button.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { CartProductsComponent } from './components/cart-products/cart-products.component';
+import { BillingPanelComponent } from './components/billing-panel/billing-panel.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     ProductCardComponent,
     FooterComponent,
     ButtonComponent,
-    PaginationComponent
+    PaginationComponent,
+    CartProductsComponent,
+    BillingPanelComponent
   ],
   imports: [
     BrowserModule,

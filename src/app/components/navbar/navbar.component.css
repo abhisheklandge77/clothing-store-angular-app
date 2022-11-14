@@ -10,3 +10,28 @@
     color: #fff;
     margin: 0;
 }
+
+.cart-icon{
+    color: #fff;
+    position: relative;
+    padding-right: 1rem;
+    cursor: pointer;
+}
+.cart-icon i{
+    font-size: 20px;
+}
+
+.cart-count{
+    position: absolute;
+    border-radius: 50px;
+    padding: 2px 6px;
+    background-color: #20232a;
+    color: #fff;
+    top: -10px;
+    left: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    font-size: 12px;
+}

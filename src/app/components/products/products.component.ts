@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProductsService } from 'src/app/products.service';
 
 @Component({
   selector: 'app-products',
@@ -6,20 +7,38 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  @Input() products!: any[];
+  products: any;
   page: number = 1;
   totalCount: number = 0;
   pageSize: number = 10;
 
-  constructor() {}
+  constructor(private productsService: ProductsService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getProductsList();
+  }
 
-  setCurrentPage(currentPage: any): void{
+  getProductsList(): void {
+    this.productsService.getProducts().subscribe((res) => {
+      this.productsService.cartProductsList$.subscribe((cartProducts: any) => {
+        cartProducts.forEach((product: any) => {
+          const isProductPresent = res.products.find((p: any)=> p?.code === product?.code);
+          if(isProductPresent){
+            isProductPresent.quantity = product.quantity;
+            isProductPresent.addedToCart = product.addedToCart;
+          }
+        });
+      })
+      console.log("products:::", res);
+      this.products = res.products;
+    })
+  }
+
+  setCurrentPage(currentPage: any): void {
     this.page = currentPage;
   }
 
-  setPageSize(event: any): void{
+  setPageSize(event: any): void {
     this.pageSize = event.target.value;
     this.page = 1;
   }

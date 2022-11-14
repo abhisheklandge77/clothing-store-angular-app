@@ -6,7 +6,19 @@
         <h4 class="product-title" [title]="product.name">{{product.name}}</h4>
         <h3>Price: {{product.price.formattedValue}}</h3>
     </div>
+    <div class="quantity-section" *ngIf="product.quantity">
+        <app-button buttonText="-" [customButtonStyle]="{'background-color': '#20232a', 'padding': '.3rem .6rem'}" (onBtnClick)="onDecreaseQuantityBtnCLick(product)">
+        </app-button>
+        <p>{{product.quantity}}</p>
+        <app-button buttonText="+" [customButtonStyle]="{'background-color': '#20232a', 'padding': '.3rem .6rem'}" (onBtnClick)="onIncreaseQuantityBtnCLick(product)">
+        </app-button>
+    </div>
     <div class="add-cart-btn-container">
-        <app-button buttonText="Add to Cart" (onBtnClick)="onAddToCartBtnClick(product)"></app-button>
+        <app-button *ngIf="!product.addedToCart else showRemoveButton" buttonText="Add to Cart"
+            (onBtnClick)="onAddToCartBtnClick(product)"></app-button>
+        <ng-template #showRemoveButton>
+            <app-button [customButtonStyle]="{'background-color': 'red'}" buttonText="Remove from Cart"
+                (onBtnClick)="onRemoveFromCartBtnClick(product)"></app-button>
+        </ng-template>
     </div>
 </div>
