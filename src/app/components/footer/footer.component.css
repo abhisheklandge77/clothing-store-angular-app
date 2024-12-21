@@ -25,3 +25,9 @@
 .footer-container p{
     margin: 0;
 }
+
+@media only screen and (max-width: 768px) {
+    .footer-links{
+        width: 40%;
+    }
+}
