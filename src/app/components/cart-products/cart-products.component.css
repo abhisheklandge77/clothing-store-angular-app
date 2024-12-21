@@ -28,7 +28,18 @@
     padding: 1rem;
     background-color: #fff;
     border-radius: 5px;
-    max-height: 70vh;
-    overflow-y: auto;
+    max-height: fit-content;
     box-shadow: 3px 3px 12px rgba(0, 0, 0, .3);
+}
+
+@media only screen and (max-width: 768px) {
+    .cart-main-panel{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .cart-products-container, .billing-panel {
+        width: 85%;
+        margin: 0 auto;
+    }
 }
